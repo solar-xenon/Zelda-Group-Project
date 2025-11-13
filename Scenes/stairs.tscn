@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://boasyr0v1gn3o"]
+
+[ext_resource type="Texture2D" uid="uid://bwbui7ynq4274" path="res://Assets/Stairs.png" id="1_aiuvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbift"]
+size = Vector2(16, 16)
+
+[node name="Stairs" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aiuvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qbift")
