@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://c8t6jwo61ft2v"]
+[gd_scene load_steps=12 format=4 uid="uid://c8t6jwo61ft2v"]
 
+[ext_resource type="PackedScene" uid="uid://cncthsespxd2u" path="res://Scenes/spider.tscn" id="1_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://q0beqk1020v1" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://ck5s4a4a15h2f" path="res://Scenes/block.tscn" id="2_5a7ea"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4a2b3ejm33r" path="res://Assets/Path.png" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://boasyr0v1gn3o" path="res://Scenes/stairs.tscn" id="6_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://rxuwjvygyu7k" path="res://Scenes/medal.tscn" id="7_o06y3"]
+[ext_resource type="PackedScene" uid="uid://n1pito2ck6wx" path="res://Scenes/skelly.tscn" id="8_k7acu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ukr8"]
 texture = ExtResource("5_fo5ed")
@@ -31,6 +33,10 @@ sources/0 = SubResource("TileSetAtlasSource_5ukr8")
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Spider" parent="." instance=ExtResource("1_5v1tr")]
+position = Vector2(-23, 26)
+scale = Vector2(0.5, 0.5)
+
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(320, 192)
 
@@ -42,6 +48,10 @@ stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_a02cp")]
 position = Vector2(95, 116)
+
+[node name="Skelly" parent="." instance=ExtResource("8_k7acu")]
+y_sort_enabled = true
+position = Vector2(-79, 48)
 
 [node name="Layout" type="Node" parent="."]
 
