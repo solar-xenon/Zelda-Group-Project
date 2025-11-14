@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db4f6a5rim14t"]
+[gd_scene load_steps=7 format=3 uid="uid://db4f6a5rim14t"]
 
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_12fag"]
 [ext_resource type="PackedScene" uid="uid://ck5s4a4a15h2f" path="res://Scenes/block.tscn" id="2_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://q0beqk1020v1" path="res://Scenes/player.tscn" id="2_v36qu"]
 [ext_resource type="PackedScene" uid="uid://c35nyqkp8xyv6" path="res://Scenes/bricks.tscn" id="3_v36qu"]
 [ext_resource type="PackedScene" uid="uid://boasyr0v1gn3o" path="res://Scenes/stairs.tscn" id="5_v36qu"]
+[ext_resource type="PackedScene" uid="uid://rxuwjvygyu7k" path="res://Scenes/medal.tscn" id="6_cggpd"]
 
 [node name="Level2" type="Node"]
 
@@ -1832,3 +1833,6 @@ position = Vector2(-120, 968)
 
 [node name="Stairs" parent="." instance=ExtResource("5_v36qu")]
 position = Vector2(-64, 976)
+
+[node name="Medal" parent="." instance=ExtResource("6_cggpd")]
+position = Vector2(144, 104)

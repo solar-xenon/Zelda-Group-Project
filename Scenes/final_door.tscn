@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bumyheslt3te6"]
+[gd_scene load_steps=4 format=3 uid="uid://bumyheslt3te6"]
 
+[ext_resource type="Script" uid="uid://cqe622njy10b4" path="res://Scripts/final_door.gd" id="1_kdeou"]
 [ext_resource type="Texture2D" uid="uid://d2h61shvw2j5s" path="res://Assets/Final Door.png" id="1_sely0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdeou"]
 size = Vector2(18, 24)
 
 [node name="FinalDoor" type="Area2D"]
+script = ExtResource("1_kdeou")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sely0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kdeou")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

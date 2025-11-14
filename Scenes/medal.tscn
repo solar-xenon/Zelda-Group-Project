@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://rxuwjvygyu7k"]
+
+[ext_resource type="Texture2D" uid="uid://brhvrfyw43pt1" path="res://Assets/Medal.png" id="1_s6rat"]
+[ext_resource type="Script" uid="uid://p6u3dd12sth" path="res://Scripts/medal.gd" id="1_yu7ix"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6rat"]
+radius = 6.0
+
+[node name="Medal" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_yu7ix")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s6rat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s6rat")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
