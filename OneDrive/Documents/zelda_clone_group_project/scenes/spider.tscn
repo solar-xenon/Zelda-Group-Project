@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bag4tttgcynrn"]
+[gd_scene load_steps=19 format=3 uid="uid://bag4tttgcynrn"]
 
-[ext_resource type="Script" path="res://scenes/spider.gd" id="1_r7bcu"]
-[ext_resource type="Texture2D" uid="uid://cbh4gq7p1o2gd" path="res://assets/Bug.png" id="2_o6co8"]
+[ext_resource type="Script" path="res://Scripts/spider.gd" id="1_r7bcu"]
+[ext_resource type="Texture2D" uid="uid://cbh4gq7p1o2gd" path="res://Assets/Bug.png" id="2_o6co8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ba1s"]
 atlas = ExtResource("2_o6co8")
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n06xd")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -104,12 +104,17 @@ size = Vector2(51, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo8pe"]
 size = Vector2(51.5, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujlbn"]
+size = Vector2(32, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3a51x"]
+radius = 59.45
+
 [node name="Spider" type="CharacterBody2D"]
+collision_layer = 5
 script = ExtResource("1_r7bcu")
-patrol_points = Array[Vector2]([Vector2(300, 150), Vector2(400, 200)])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(447, 207)
 sprite_frames = SubResource("SpriteFrames_rjojj")
 animation = &"Death"
 
@@ -117,11 +122,10 @@ animation = &"Death"
 wait_time = 2.0
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 8
+collision_mask = 16
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(445.5, 204)
 shape = SubResource("RectangleShape2D_lvy6c")
 
 [node name="DamageBox" type="Area2D" parent="."]
@@ -129,7 +133,20 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="DamageBoxSape" type="CollisionShape2D" parent="DamageBox"]
-position = Vector2(445.75, 204)
 shape = SubResource("RectangleShape2D_xo8pe")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ujlbn")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+position = Vector2(-4, 0)
+collision_layer = 2
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_3a51x")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_death_animation_finished"]
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

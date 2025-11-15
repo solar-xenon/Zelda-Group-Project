@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbh4gq7p1o2gd"
-path="res://.godot/imported/Bug.png-17f4aa05cf5bbb1bdfc57950bb51a685.ctex"
+uid="uid://d2h61shvw2j5s"
+path="res://.godot/imported/Final Door.png-9fb64d894a348ffa053d1d752ddd9135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bug.png"
-dest_files=["res://.godot/imported/Bug.png-17f4aa05cf5bbb1bdfc57950bb51a685.ctex"]
+source_file="res://Assets/Final Door.png"
+dest_files=["res://.godot/imported/Final Door.png-9fb64d894a348ffa053d1d752ddd9135.ctex"]
 
 [params]
 

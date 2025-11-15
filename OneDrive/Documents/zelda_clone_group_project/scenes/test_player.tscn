@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bayd73fsfoik8"]
+
+[ext_resource type="Script" path="res://hit_sender.gd" id="1_ayqwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b18v7"]
+size = Vector2(132, 86)
+
+[node name="TestPlayer" type="CharacterBody2D"]
+
+[node name="HitSender" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource("1_ayqwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitSender"]
+position = Vector2(56, 33)
+shape = SubResource("RectangleShape2D_b18v7")

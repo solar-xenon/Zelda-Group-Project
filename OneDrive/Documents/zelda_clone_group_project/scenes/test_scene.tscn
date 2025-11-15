@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1n0mwtwb8l3t"]
+
+[ext_resource type="Script" path="res://Scenes/test_box.gd" id="1_vdlup"]
+[ext_resource type="Texture2D" uid="uid://jsggumlpysee" path="res://Assets/Bricks.png" id="1_yiagm"]
+[ext_resource type="Texture2D" uid="uid://d2h61shvw2j5s" path="res://Assets/Final Door.png" id="2_bemn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s1eg"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d062s"]
+size = Vector2(64, 64)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="TestBox" type="Area2D" parent="."]
+position = Vector2(100, 100)
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_vdlup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestBox"]
+shape = SubResource("RectangleShape2D_8s1eg")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestBox"]
+texture = ExtResource("1_yiagm")
+
+[node name="Target" type="Area2D" parent="."]
+position = Vector2(100, 100)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
+shape = SubResource("RectangleShape2D_d062s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Target"]
+texture = ExtResource("2_bemn7")
+
+[connection signal="area_entered" from="TestBox" to="TestBox" method="_on_area_entered"]
+[connection signal="body_entered" from="TestBox" to="TestBox" method="_on_body_entered"]
