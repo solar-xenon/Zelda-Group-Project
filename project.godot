@@ -15,6 +15,10 @@ run/main_scene="uid://c8t6jwo61ft2v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CollectionManager="*res://Scripts/collection_manager.gd"
+
 [display]
 
 window/size/viewport_width=320

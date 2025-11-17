@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://bp4y2eu3j7ova"]
+
+[ext_resource type="Script" uid="uid://bk4d67qkom8cm" path="res://Scripts/spider.gd" id="1_gedd4"]
+[ext_resource type="Texture2D" uid="uid://dso8mctwsixfi" path="res://Assets/Bug.png" id="1_h33fn"]
+
+[sub_resource type="Animation" id="Animation_gedd4"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sbdki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qu26k"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.203411, 0.447786, 0.698895, 0.945721),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_nxbgl"]
+resource_name = "death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0984302, 0.200115, 0.30614),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mg3t7"]
+_data = {
+&"RESET": SubResource("Animation_sbdki"),
+&"death": SubResource("Animation_nxbgl"),
+&"idle": SubResource("Animation_gedd4"),
+&"walk": SubResource("Animation_qu26k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h33fn"]
+size = Vector2(43, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h33fn"]
+radius = 30.0666
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedd4"]
+size = Vector2(76, 72)
+
+[node name="Spider" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_gedd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h33fn")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mg3t7")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_h33fn")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_h33fn")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_gedd4")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

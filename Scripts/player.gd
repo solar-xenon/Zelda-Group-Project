@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 100.0
 
 var input_vector = Vector2.ZERO
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback
+
+@export var enemy = Enemy
+
 
 func _physics_process(delta: float) -> void:
 	if playback != null:
