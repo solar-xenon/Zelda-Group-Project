@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://db4f6a5rim14t"]
+[gd_scene load_steps=9 format=3 uid="uid://db4f6a5rim14t"]
 
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_12fag"]
 [ext_resource type="PackedScene" uid="uid://ck5s4a4a15h2f" path="res://Scenes/block.tscn" id="2_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://q0beqk1020v1" path="res://Scenes/player.tscn" id="2_v36qu"]
 [ext_resource type="PackedScene" uid="uid://c35nyqkp8xyv6" path="res://Scenes/bricks.tscn" id="3_v36qu"]
+[ext_resource type="PackedScene" uid="uid://dhmwiid8dx6q7" path="res://Scenes/special_block.tscn" id="5_cggpd"]
 [ext_resource type="PackedScene" uid="uid://boasyr0v1gn3o" path="res://Scenes/stairs.tscn" id="5_v36qu"]
+[ext_resource type="PackedScene" uid="uid://bl3waa3o0fgif" path="res://Scenes/medal.tscn" id="7_055b2"]
+[ext_resource type="PackedScene" uid="uid://cih8fyipy338q" path="res://Scenes/npc.tscn" id="8_2mgoq"]
 
 [node name="Level2" type="Node"]
 
@@ -42,7 +45,7 @@ texture = ExtResource("1_12fag")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_v36qu")]
-position = Vector2(145, 1162)
+position = Vector2(144, 1163)
 
 [node name="Layout" type="Node" parent="."]
 
@@ -1797,8 +1800,11 @@ position = Vector2(-40, 1000)
 [node name="Block119" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
 position = Vector2(-40, 952)
 
-[node name="Block122" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
+[node name="SpecialBlock" parent="Layout/Room18" instance=ExtResource("5_cggpd")]
 position = Vector2(-8, 984)
+
+[node name="SpecialBlock2" parent="Layout/Room18" instance=ExtResource("5_cggpd")]
+position = Vector2(-8, 968)
 
 [node name="Block134" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
 position = Vector2(-88, 1000)
@@ -1824,11 +1830,14 @@ position = Vector2(-104, 952)
 [node name="Block147" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
 position = Vector2(-120, 984)
 
-[node name="Block123" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
-position = Vector2(-8, 968)
-
 [node name="Block148" parent="Layout/Room18" instance=ExtResource("2_1q6tm")]
 position = Vector2(-120, 968)
 
 [node name="Stairs" parent="." instance=ExtResource("5_v36qu")]
 position = Vector2(-64, 976)
+
+[node name="Medal" parent="." instance=ExtResource("7_055b2")]
+position = Vector2(144, 104)
+
+[node name="NPC" parent="." instance=ExtResource("8_2mgoq")]
+position = Vector2(591, 257)

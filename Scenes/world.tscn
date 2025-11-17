@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8t6jwo61ft2v"]
+[gd_scene load_steps=14 format=4 uid="uid://c8t6jwo61ft2v"]
 
 [ext_resource type="PackedScene" uid="uid://q0beqk1020v1" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_go701"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c35nyqkp8xyv6" path="res://Scenes/bricks.tscn" id="4_8j60k"]
 [ext_resource type="Texture2D" uid="uid://b4a2b3ejm33r" path="res://Assets/Path.png" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://boasyr0v1gn3o" path="res://Scenes/stairs.tscn" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://dhmwiid8dx6q7" path="res://Scenes/special_block.tscn" id="6_ikia7"]
 [ext_resource type="PackedScene" uid="uid://cxksj6ida4rnh" path="res://Scenes/skeleton.tscn" id="7_o06y3"]
 [ext_resource type="PackedScene" uid="uid://cih8fyipy338q" path="res://Scenes/npc.tscn" id="9_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://bl3waa3o0fgif" path="res://Scenes/medal.tscn" id="10_0fj1v"]
@@ -44,10 +45,11 @@ texture = ExtResource("1_go701")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_a02cp")]
-position = Vector2(87, 101)
+position = Vector2(89, 109)
 
-[node name="Spider" parent="Player" instance=ExtResource("3_k7acu")]
-position = Vector2(-163.75, 237.5)
+[node name="Spider" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-44, 291)
+scale = Vector2(0.4, 0.4)
 
 [node name="Layout" type="Node" parent="."]
 
@@ -1925,8 +1927,11 @@ position = Vector2(-40, -440)
 [node name="Block119" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
 position = Vector2(-40, -488)
 
-[node name="Block122" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
+[node name="SpecialBlock" parent="Layout/Room16" instance=ExtResource("6_ikia7")]
 position = Vector2(-8, -456)
+
+[node name="SpecialBlock2" parent="Layout/Room16" instance=ExtResource("6_ikia7")]
+position = Vector2(-8, -472)
 
 [node name="Block134" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
 position = Vector2(-88, -440)
@@ -1951,9 +1956,6 @@ position = Vector2(-104, -488)
 
 [node name="Block147" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
 position = Vector2(-120, -456)
-
-[node name="Block123" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
-position = Vector2(-8, -472)
 
 [node name="Block148" parent="Layout/Room16" instance=ExtResource("2_5a7ea")]
 position = Vector2(-120, -472)
@@ -2176,7 +2178,7 @@ position = Vector2(-64, -464)
 position = Vector2(152, 254)
 
 [node name="NPC" parent="." instance=ExtResource("9_5v1tr")]
-position = Vector2(-269, -202)
+position = Vector2(-311, -175)
 
 [node name="Medal" parent="." instance=ExtResource("10_0fj1v")]
-position = Vector2(98.4207, 135.902)
+position = Vector2(768, -328)
