@@ -40,3 +40,4 @@ func _drop_reward():
 		reward.global_position = global_position + Vector2(32, 0)
 		get_parent().add_child(reward)
 		print("🎁 NPC dropped reward!")
+	CollectionManager.check_endgame()

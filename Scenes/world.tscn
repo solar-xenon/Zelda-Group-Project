@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c8t6jwo61ft2v"]
+[gd_scene load_steps=15 format=4 uid="uid://c8t6jwo61ft2v"]
 
 [ext_resource type="PackedScene" uid="uid://q0beqk1020v1" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_go701"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxksj6ida4rnh" path="res://Scenes/skeleton.tscn" id="7_o06y3"]
 [ext_resource type="PackedScene" uid="uid://cih8fyipy338q" path="res://Scenes/npc.tscn" id="9_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://bl3waa3o0fgif" path="res://Scenes/medal.tscn" id="10_0fj1v"]
+[ext_resource type="PackedScene" uid="uid://xcaa58n4sg2c" path="res://Scenes/HUD.tscn" id="12_7yui6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ukr8"]
 texture = ExtResource("5_fo5ed")
@@ -2182,3 +2183,5 @@ position = Vector2(-311, -175)
 
 [node name="Medal" parent="." instance=ExtResource("10_0fj1v")]
 position = Vector2(768, -328)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("12_7yui6")]

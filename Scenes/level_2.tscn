@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://db4f6a5rim14t"]
+[gd_scene load_steps=10 format=3 uid="uid://db4f6a5rim14t"]
 
 [ext_resource type="Texture2D" uid="uid://b3bqeqa8catsh" path="res://Assets/Floor.png" id="1_12fag"]
 [ext_resource type="PackedScene" uid="uid://ck5s4a4a15h2f" path="res://Scenes/block.tscn" id="2_1q6tm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://boasyr0v1gn3o" path="res://Scenes/stairs.tscn" id="5_v36qu"]
 [ext_resource type="PackedScene" uid="uid://bl3waa3o0fgif" path="res://Scenes/medal.tscn" id="7_055b2"]
 [ext_resource type="PackedScene" uid="uid://cih8fyipy338q" path="res://Scenes/npc.tscn" id="8_2mgoq"]
+[ext_resource type="PackedScene" uid="uid://xcaa58n4sg2c" path="res://Scenes/HUD.tscn" id="9_uhnj4"]
 
 [node name="Level2" type="Node"]
 
@@ -1841,3 +1842,5 @@ position = Vector2(144, 104)
 
 [node name="NPC" parent="." instance=ExtResource("8_2mgoq")]
 position = Vector2(591, 257)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_uhnj4")]

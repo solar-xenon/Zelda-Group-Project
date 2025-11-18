@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://daan3sh32qm4t" path="res://Scripts/npc.gd" id="1_xxsvc"]
 [ext_resource type="PackedScene" uid="uid://bg53egaicb0u0" path="res://Scenes/key.tscn" id="2_g6unj"]
 
-[sub_resource type="Animation" id="Animation_xxsvc"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_g6unj"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,8 +19,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_g6unj"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_xxsvc"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

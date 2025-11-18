@@ -31,3 +31,4 @@ func move_state(delta: float) -> void:
 
 		velocity = input_vector * SPEED
 		move_and_slide()
+		

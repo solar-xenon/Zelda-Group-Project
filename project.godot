@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Zelda Clone"
-run/main_scene="uid://c8t6jwo61ft2v"
+run/main_scene="uid://bad7g64cndait"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 CollectionManager="*res://Scripts/collection_manager.gd"
+Hud="*res://Scenes/HUD.tscn"
 
 [display]
 
