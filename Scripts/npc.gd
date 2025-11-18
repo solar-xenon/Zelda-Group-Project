@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var required_kills: int = 5
+@export var required_kills: int = 2
 @export var reward_scene: PackedScene
 
 var player_ref: Node2D = null
@@ -40,4 +40,4 @@ func _drop_reward():
 		reward.global_position = global_position + Vector2(32, 0)
 		get_parent().add_child(reward)
 		print("🎁 NPC dropped reward!")
-	CollectionManager.check_endgame()
+	#CollectionManager.check_endgame()

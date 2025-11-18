@@ -15,6 +15,10 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 
+[node name="MedalCount" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
 [node name="KillCount" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
