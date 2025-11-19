@@ -46,10 +46,74 @@ texture = ExtResource("1_go701")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_a02cp")]
-position = Vector2(89, 109)
+position = Vector2(137, 286)
 
 [node name="Spider" parent="." instance=ExtResource("3_k7acu")]
 position = Vector2(-44, 291)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider2" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-93, 229)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider4" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(432, -82)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider13" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(323, -148)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider15" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(159, -320)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider16" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(119, -288)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider17" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(66, -368)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider14" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(382, -135)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider5" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(397, -32)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider6" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(314, -32)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider7" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(358, 14)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider8" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(424, 17)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider9" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-116, 11)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider10" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-131, -52)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider11" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(8.99998, -67)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider12" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-21, 8.99999)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spider3" parent="." instance=ExtResource("3_k7acu")]
+position = Vector2(-134, 282)
 scale = Vector2(0.4, 0.4)
 
 [node name="Layout" type="Node" parent="."]
@@ -2177,7 +2241,40 @@ position = Vector2(-64, -464)
 next_level = "res://Scenes/level_2.tscn"
 
 [node name="Skeleton" parent="." instance=ExtResource("7_o06y3")]
-position = Vector2(152, 254)
+position = Vector2(77, 76)
+
+[node name="Skeleton6" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(124, -67)
+
+[node name="Skeleton9" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(363, -207)
+
+[node name="Skeleton10" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(613, -321)
+
+[node name="Skeleton11" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(549, -350)
+
+[node name="Skeleton12" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(544, -284)
+
+[node name="Skeleton7" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(163, -5)
+
+[node name="Skeleton8" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(114, 6)
+
+[node name="Skeleton2" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(86, 142)
+
+[node name="Skeleton3" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(200, 115)
+
+[node name="Skeleton4" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(351, 225)
+
+[node name="Skeleton5" parent="." instance=ExtResource("7_o06y3")]
+position = Vector2(353, 289)
 
 [node name="NPC" parent="." instance=ExtResource("9_5v1tr")]
 position = Vector2(-311, -175)

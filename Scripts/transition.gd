@@ -3,8 +3,9 @@ extends CanvasLayer
 
 signal transitioned
 
-func transition():
+func _ready() -> void:
 	$AnimationPlayer.play("fade_to_black")
+	CollectionManager.enemies_killed = 0
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

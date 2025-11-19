@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var required_kills: int = 2
+@export var required_kills: int = 1
 @export var reward_scene: PackedScene
 
 var player_ref: Node2D = null
@@ -27,12 +27,28 @@ func _show_dialogue():
 	if kills < required_kills:
 		$Label.text = "Kill " + str(required_kills) + " enemies! Progress: " + str(kills) + "/" + str(required_kills)
 	else:
-		if CollectionManager.key_count > 0:
-			return
-		else:
-			$Label.text = "Quest complete! Thank you!"
-			CollectionManager.key_count += 1
-			_drop_reward()
+		if get_tree().current_scene.name == "World":
+			print("aaa")
+			if CollectionManager.key_count > 0:
+				return
+			else:
+				$Label.text = "Quest complete! Thank you!"
+				CollectionManager.key_count += 1
+				_drop_reward()
+		if get_tree().current_scene.name == "Level2":
+			if CollectionManager.key_count > 1:
+				return
+			else:
+				$Label.text = "Quest complete! Thank you!"
+				CollectionManager.key_count += 1
+				_drop_reward()
+		if get_tree().current_scene.name == "Level3":
+			if CollectionManager.key_count > 2:
+				return
+			else:
+				$Label.text = "Quest complete! Thank you!"
+				CollectionManager.key_count += 1
+				_drop_reward()
 
 func _drop_reward():
 	if reward_scene:
