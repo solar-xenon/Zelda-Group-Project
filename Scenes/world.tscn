@@ -2174,6 +2174,7 @@ tile_set = SubResource("TileSet_o06y3")
 
 [node name="Stairs" parent="." instance=ExtResource("6_5ukr8")]
 position = Vector2(-64, -464)
+next_level = "res://Scenes/level_2.tscn"
 
 [node name="Skeleton" parent="." instance=ExtResource("7_o06y3")]
 position = Vector2(152, 254)

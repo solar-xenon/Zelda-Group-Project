@@ -46,7 +46,7 @@ texture = ExtResource("1_12fag")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_v36qu")]
-position = Vector2(144, 1163)
+position = Vector2(334, 1129)
 
 [node name="Layout" type="Node" parent="."]
 
@@ -1836,6 +1836,7 @@ position = Vector2(-120, 968)
 
 [node name="Stairs" parent="." instance=ExtResource("5_v36qu")]
 position = Vector2(-64, 976)
+next_level = "res://Scenes/level_3.tscn"
 
 [node name="Medal" parent="." instance=ExtResource("7_055b2")]
 position = Vector2(144, 104)

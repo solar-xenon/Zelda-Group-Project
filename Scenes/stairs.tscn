@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://boasyr0v1gn3o"]
+[gd_scene load_steps=5 format=3 uid="uid://boasyr0v1gn3o"]
 
 [ext_resource type="Texture2D" uid="uid://bwbui7ynq4274" path="res://Assets/Stairs.png" id="1_aiuvb"]
+[ext_resource type="Script" uid="uid://clrhlrsu1h15l" path="res://Scripts/stairs.gd" id="1_qbift"]
+[ext_resource type="PackedScene" uid="uid://dd7uikn8l7l65" path="res://Scenes/transition.tscn" id="2_tl8cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbift"]
 size = Vector2(16, 16)
 
 [node name="Stairs" type="Area2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_aiuvb")
+script = ExtResource("1_qbift")
+transition = ExtResource("2_tl8cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qbift")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aiuvb")
