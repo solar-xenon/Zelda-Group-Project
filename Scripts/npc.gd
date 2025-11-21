@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var required_kills: int = 1
+@export var required_kills: int = 15
 @export var reward_scene: PackedScene
 
 var player_ref: Node2D = null

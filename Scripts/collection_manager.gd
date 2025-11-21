@@ -5,7 +5,7 @@ static var medal_amount = 0
 static var enemies_killed = 0
 static var key_count = 0
 static var has_key = false
-const REQUIRED_KILLS = 5
+const REQUIRED_MEDALS = 3
 
 func _ready():
 	get_tree().connect("tree_changed", Callable(self, "_on_scene_changed"))
@@ -15,7 +15,7 @@ func add_kill():
 	enemies_killed += 1
 
 func check_endgame():
-	if enemies_killed >= REQUIRED_KILLS:
+	if medal_amount >= REQUIRED_MEDALS:
 		game_won()
 	else:
 		game_lost()
